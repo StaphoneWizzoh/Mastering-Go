@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func dataTypes(){
@@ -60,20 +61,128 @@ func arrays(){
 	}
 }
 
-func slices(){
-	aSlice := []int{1,2,3,4,5}
-	integer := make([]int, 20)
+// func slices(){
+// 	aSlice := []int{1,2,3,4,5}
+// 	integer := make([]int, 20)
 
-	for i:=0; i < len(aSlice); i++{
-		fmt.Printf("%d ", aSlice[i])
+// 	for i:=0; i < len(aSlice); i++{
+// 		fmt.Printf("%d ", aSlice[i])
 		
-	}
-	fmt.Println()
+// 	}
+// 	fmt.Println()
 
-	integer = append(integer, 12345)
-	fmt.Println(aSlice[len(aSlice) -1])
+// 	integer = append(integer, 12345)
+// 	fmt.Println(aSlice[len(aSlice) -1])
+// 	mySlice := make([]aStructure, 0)
+// 	mySlice = append(mySlice, aStructure{"Mishalis", 180, 90})
+// 	mySlice = append(mySlice, aStructure{"Mkuu", 120, 80})
+// 	mySlice = append(mySlice, aStructure{"Wizz", 150, 60})
+// 	mySlice = append(mySlice, aStructure{"Moses", 130, 80})
+// 	mySlice = append(mySlice, aStructure{"Muuio", 184, 70})
+// 	mySlice = append(mySlice, aStructure{"Gerald", 160, 60})
+
+// 	fmt.Println("0: ", mySlice)
+
+// 	sort.Slice(mySlice, func(i, j int) bool{
+// 		return mySlice[i].height < mySlice[j].height
+// 	})
+
+// 	fmt.Println("<: ", mySlice)
+// 	sort.Slice(mySlice, func(i, j int)bool{
+// 		return mySlice[i].height > mySlice[j].height
+// 	})
+// 	fmt.Println(">: ", mySlice)
+// }
+
+type aStructure struct{
+	person string
+	height int
+	weight int
+}
+
+// func maps(){
+// 	iMap = make(map[string] int)
+// 	iMap["k1"] = 12
+// 	iMap["k2"] = 13
+
+// 	fmt.Println("IMap: ", iMap)
+
+// 	anotherMap := map[string]int{
+// 		"k1": 12,
+// 		"k2": 13,
+// 	}
+
+// 	fmt.Println("AnotherMap", anotherMap)
+// 	_, ok := iMap["doesItExist"]
+// 	if ok {
+// 		fmt.Println("Exists!")
+// 	}else{
+// 		fmt.Println("Does NOT Exist")
+// 	}
+
+// 	for key, value := range iMap{
+// 		fmt.Println(key, value)
+// 	}
+// }
+
+func getPointer(n *int){
+	*n = *n * *n
+}
+func returnPointer(n int) *int{
+	v := n * n
+	return &v
+}
+
+func pointers(){
+	i := -10
+	j := 25
+
+	pI := &i
+	pJ := &j
+
+	fmt.Println("pI memory:", pI)
+	fmt.Println("pJ memory:", pJ)
+	fmt.Println("pI value:", *pI)
+	fmt.Println("pJ value:", *pJ)
+
+	*pI = 123456
+	*pI --
+	fmt.Println("I: ", i)
+
+	getPointer(pJ)
+	fmt.Println("j: ", j)
+
+	k := returnPointer(12)
+	fmt.Println(*k)
+	fmt.Println(k)
+}
+
+func execTime(){
+	start := time.Now()
+	time.Sleep(time.Second)
+	duration := time.Since(start)
+	fmt.Println("It took time.Sleep(1)", duration, " to finish")
+
+	start = time.Now()
+	time.Sleep(2 * time.Second)
+	duration = time.Since(start)
+	fmt.Println("It took time.Sleep(2) ", duration, " to finish.")
+
+	start = time.Now()
+	for i := 0; i < 200000000; i++ {
+	_ = i
+	}
+	duration = time.Since(start)
+	fmt.Println("It took the for loop", duration, "to finish.")
+	sum := 0
+	start = time.Now()
+	for i := 0; i < 200000000; i++ {
+	sum += i
+	}
+	duration = time.Since(start)
+	fmt.Println("It took the for loop", duration, "to finish.")
 }
 
 func main(){
-	slices()
+	execTime()
 }
