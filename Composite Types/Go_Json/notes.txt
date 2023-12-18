@@ -1,0 +1,7 @@
+> The main difference between the Marshal and Unmarshal pair and the Encode and the decode pair is that the former pair works on single objects, whereas the latter pair can work on multiple objects as well as streams of bytes.
+
+> json.Unmarshal() function gets JSON input and converts it into a Go structure
+
+> json.Marshal() and json.Unmarshal() requires a pointer variable that converts into the JSON format
+
+> Unstructured json data is put into Go maps instead of Go structures.

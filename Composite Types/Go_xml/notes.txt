@@ -1,0 +1,1 @@
+> The MarshalIndent() function works like json.Marshal() but each XML element begins with a new line and is indented accordingly to its nesting depth
