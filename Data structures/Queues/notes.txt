@@ -1,0 +1,1 @@
+In a queue, each new element is inserted to the head and removed from the tail of the linked list
