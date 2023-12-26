@@ -1,0 +1,2 @@
+A linked list is a structure with a finite set of elements where each element uses at least two memory locations;
+    one for storing the actual data and the other for storing a pointer that links the current elemnt to the next one
