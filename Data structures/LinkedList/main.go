@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// Singly linked list implementation
+
 type Node struct {
 	Value int
 	Next  *Node
