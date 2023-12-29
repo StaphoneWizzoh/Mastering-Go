@@ -1,0 +1,22 @@
+TYPE METHODS:
+    A Go type method is a function with a special receiver argument.
+
+    An additional parameter is placed in front of the function name.
+    
+    This particular parameter connects the function to the type of that extra parameter.
+
+    The receiver of a method is defined using a regular variable name without the need to use a dedicated keyword such as `this` or `self`
+
+INTERFACES: 
+    Interfaces are abstact types that define a set of functions that need to be implemented so that a type can be considered as instance of the interface.
+
+TYPE ASSERTIONS:
+    They help in two things; checking whether an interface value keeps a particular type and allowing the use of a concrete value stored in an interface or assign it to a new variable.
+
+REFLECTION:
+    Its a Go feature that allows one to dynamically learn the type of an arbitrary object, as well as information about its structure.
+    Disadvantages of reflection:
+        1. Its extensive use makes code hard to read and maintain
+        2. It makes programs slower
+        3. Reflection errors cannot be caught at build time and are reported at runtime as panics.
+
