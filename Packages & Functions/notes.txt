@@ -1,0 +1,20 @@
+PACKAGES:
+    They are mainly used for grouping related functions, variables, and constants so that they can be transfered and used easily in a Go program.
+
+    Go packages need to be called directly or indirectly from a `main` package in order to be used.
+
+    The init() function is executed only once.
+
+FUNCTIONS:
+    1. Anonymous Functions(closures): Used for implementing things that require a small amount of code, can be defined inline without the need of a name.
+
+    2. Go allows one to name the return values of a Go function.
+
+    3. A function can take pointer parameters provided that its signature allows it.
+
+    4. Go functions can either return other functions or accept functions as parameters. The most common uses of the latter case is for sorting elements and filepath.Walk() function.
+    
+    5. Variadic Functions: Are functions that accept a variable number of arguments.
+
+PRIVATE VARIABLES AND FUNCTIONS:
+    Functions, variables, types and so forth that begin with an uppercase letter are public, whereas those that begin with a lowercase letter are private.
