@@ -1,0 +1,17 @@
+Concurrency in Go is offered in the form of `goroutines` and `channels`
+
+Go scheduler is the Go component responsible for the way and the order in which the goroutines of a Go program are executed
+
+Parallelism is the simultaneous execution of multiple entities of some kind, whereas Concurrency is a way of structuring your components so that they can be executed independently as possible
+
+`Goroutines`:
+     are the smallest Go entities that can be executed on their own in a Go program. The `go` keyword makes the function call return immediately, while the function starts running in the background as a goroutine and the rest of the program continues its execution.
+
+`Channels`: 
+    can get data from goroutines in a concurrent and efficient way. This allows goroutines to to have a point of reference and they can communicate with each other.
+    For a channel to operate properly, you will need someone to receive what is sent via the channel.
+    Reading from a closed channel returns the zero value of its data type.
+    channels by default are bidirectional, but they can be made unidirectional by specifying the direction of it.
+    
+`Pipelines`:
+    It is a virtual method for connecting goroutines and channels so that the output of one goroutine becomes the input of another goroutine using channels to transfer data.
