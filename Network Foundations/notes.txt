@@ -1,0 +1,9 @@
+`http.ListenAndServe()`:
+    Used to create web servers by specifying the IP adress and the TCP port to which the server will listen, as well as the functions that will handle incoming requests.
+
+`http.RoundTripper`:
+    An interface that is used to make sure that a Go element is capable of executing HTTP transactions.
+
+`Handler function`:
+    Serves one or more URLs depending on the configuration that is stated in the Go code.
+    "http.HandleFunc()": Associates a URL with a handler function
